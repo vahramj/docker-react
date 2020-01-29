@@ -1,4 +1,4 @@
-sudo: required
+# sudo: required
 # [travis understands docker? what is a service for travis exactly?]
 services:
   - docker
@@ -6,7 +6,7 @@ services:
 before_install:
   - docker build -t vahramj/docker-react -f Dockerfile.dev .
 
-scripts:
+script:
   #   - docker run vahramj/docker-react npm test -- --coverage
   - docker run -e CI=true vahramj/docker-react npm run test
 
